@@ -1,0 +1,14 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &_tablet {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &_desktop {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
