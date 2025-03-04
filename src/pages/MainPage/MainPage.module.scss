@@ -1,0 +1,17 @@
+.section {
+  background-color: #fff;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 50px;
+
+  width: 100%;
+}

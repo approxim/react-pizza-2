@@ -1,8 +1,9 @@
 body {
   font-family: 'dodo';
   font-weight: 400;
-  background-color: black;
+  background-color: #ffdf8c;
   color: white;
+  padding: 30px;
 }
 
 .visually-hidden {
@@ -16,4 +17,9 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+#root {
+  background-color: #fff;
+  border-radius: 15px;
 }

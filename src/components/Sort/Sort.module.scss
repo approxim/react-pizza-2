@@ -1,0 +1,59 @@
+.sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  // padding-left: 20px;
+}
+
+.label {
+  cursor: pointer;
+
+  & > b {
+    padding-left: 7px;
+  }
+
+  & > span {
+    color: #fe5f1e;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    user-select: none;
+    width: 100px;
+    display: inline-block;
+  }
+
+  &.open {
+    & > svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.list {
+  width: 250px;
+
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-radius: 5px;
+  border: 1px solid rgba(#fe5f1e, 0.3);
+  overflow: hidden;
+  box-shadow: 4px 4px 15px 0px rgba(black, 0.1);
+}
+
+.item {
+  padding: 10px 15px;
+  color: black;
+  background-color: white;
+  transition: background-color 0.4s linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(black, 0.04);
+  }
+
+  &.active {
+    background-color: rgba(black, 0.07);
+  }
+}

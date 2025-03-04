@@ -3,7 +3,7 @@ import styles from './Categories.module.scss';
 import classnames from '../../utils/classnames';
 
 const Category = ({ name, id, activeCategory, setActiveCategory }) => {
-  console.log(id);
+  // console.log(id);
   return (
     <li className={styles.item}>
       <button
