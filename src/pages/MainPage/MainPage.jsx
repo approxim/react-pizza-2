@@ -30,9 +30,12 @@ const MainPage = () => {
 
           <ul className={styles.list}>
             {isLoading
-              ? [...Array(6)].map((_, index) => <Skeleton key={index} />)
+              ? [...Array(6)].map((_, index) => (
+                  <li key={index}>
+                    <Skeleton />
+                  </li>
+                ))
               : items.map((item) => <PizzaBlock key={item.id} {...item} />)}
-            {/* {items.map((item) => (isLoading ? <Skeleton key={item.id} /> : <PizzaBlock key={item.id} {...item} />))} */}
           </ul>
         </section>
       </Container>

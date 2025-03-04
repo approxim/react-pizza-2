@@ -34,7 +34,9 @@
   position: absolute;
   top: 45px;
   left: 50%;
+  z-index: 1;
   transform: translateX(-50%);
+  background-color: black;
 
   border-radius: 5px;
   border: 1px solid rgba(#fe5f1e, 0.3);
@@ -50,10 +52,11 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(black, 0.04);
+    background-color: darken(white, 10%);
   }
 
   &.active {
-    background-color: rgba(black, 0.07);
+    background-color: darken(white, 80%);
+    color: white;
   }
 }

@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import styles from './PizzaBlock.module.scss';
 import { ReactComponent as Icon } from '../../assets/icons/icon_plus.svg';
 import classnames from '../../utils/classnames';
-import Skeleton from './Skeleton';
 
 const PizzaBlock = ({ imageUrl, title, sizes, types, price, category, rating }) => {
-  const [choiseType, setChoiseType] = useState(0);
+  const [choiseType, setChoiseType] = useState(types[0]);
   const [choiseSize, setChoiseSize] = useState(sizes[0]);
 
   const typeNames = ['тонкое', 'традиционное'];
-
-  if (!imageUrl) {
-    <Skeleton />;
-  }
 
   return (
     <li className={styles.pizza}>
