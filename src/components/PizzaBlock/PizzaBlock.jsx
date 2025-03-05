@@ -16,9 +16,9 @@ const PizzaBlock = ({ imageUrl, title, sizes, types, price, category, rating }) 
       </div>
 
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>
+      {/* <p className={styles.description}>
         Цыпленок, ветчина, пикантная пепперони, острая чоризо, моцарелла, фирменный томатный соус
-      </p>
+      </p> */}
       <div className={styles.wrapper}>
         <ul className={styles.types}>
           {types.map((type, index) => (
