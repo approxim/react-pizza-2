@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styles from './CartBlock.module.scss';
 import { ReactComponent as Cross } from '../../assets/icons/icon_plus.svg';
 import classnames from '../../utils/classnames';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const CartBlock = ({ imageUrl, title, sizes, types, price }) => {
   const [count, setCount] = useState(1);
+  const [width] = useWindowSize();
 
   return (
     <li className={styles.cartBlock}>
@@ -19,13 +21,12 @@ const CartBlock = ({ imageUrl, title, sizes, types, price }) => {
       </div>
 
       <div className={styles.controls}>
-        {count > 1 && (
-          <button
-            className={classnames([styles.control, [styles.disabled, count === 1]])}
-            onClick={() => setCount(count - 1)}>
-            -
-          </button>
-        )}
+        <button
+          className={classnames([styles.control, [styles.disabled, count === 1]])}
+          onClick={() => setCount(count - 1)}>
+          -
+        </button>
+
         <span>{count}</span>
         <button onClick={() => setCount(count + 1)}>+</button>
       </div>
