@@ -1,3 +1,151 @@
-.cart {
+.cart_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.title {
+  font-size: 30px;
+  margin-top: 20px;
+  display: flex;
+  align-items: baseline;
+
+  & > svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  & > span {
+    padding-left: 10px;
+  }
+}
+
+.clean {
   color: black;
+  background-color: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  padding: 15px 0 15px 15px;
+
+  transition: color 0.3s ease-in-out;
+
+  @media (min-width: 768px) {
+    color: #b6b6b6;
+  }
+
+  & > span {
+    color: inherit;
+    padding-left: 10px;
+  }
+
+  &:hover {
+    color: black;
+  }
+}
+
+.pizzas {
+  padding-bottom: 50px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 20px;
+  padding-bottom: 100px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.total {
+  & > span {
+    font-weight: 700;
+  }
+}
+
+.summ {
+  & > span {
+    font-weight: 700;
+    color: #f24701;
+  }
+}
+
+.back {
+  grid-area: 4/1/5/2;
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #b6b6b6;
+
+  border: 1px solid currentColor;
+  border-radius: 50px;
+
+  padding: 12px 25px 10px;
+  margin-top: 50px;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  & > svg {
+    rotate: 90deg;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+
+  @media (min-width: 768px) {
+    grid-area: unset;
+    margin-top: 0;
+  }
+}
+
+.order {
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+
+  border: none;
+  border-radius: 50px;
+
+  padding: 12px 25px 10px;
+  background-color: #f24701;
+  cursor: pointer;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, translate 0.15s ease-in-out;
+
+  &:hover {
+    background-color: darken(#f24701, 10%);
+  }
+
+  &:active {
+    translate: 0px 2px;
+  }
 }
