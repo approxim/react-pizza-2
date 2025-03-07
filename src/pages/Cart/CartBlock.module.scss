@@ -67,6 +67,8 @@
   align-items: center;
   justify-self: end;
 
+  user-select: none;
+
   @media (min-width: 768px) {
     grid-area: unset;
   }

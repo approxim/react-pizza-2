@@ -1,32 +1,26 @@
 import React, { useState } from 'react';
 import styles from './Categories.module.scss';
-// import classnames from '../../utils/classnames';
-import Category from './Category';
+import classnames from '../../utils/classnames';
 
-const Categories = () => {
-  const pizzaCategories = [
-    { id: 1, name: 'Все' },
-    { id: 2, name: 'Мясные' },
-    { id: 3, name: 'Вегетарианские' },
-    { id: 4, name: 'Гриль' },
-    { id: 5, name: 'Острые' },
-    { id: 6, name: 'Закрытые' },
-  ];
-
-  const [activeCategory, setActiveCategory] = useState(1);
+const Categories = ({ value, onClickCategory }) => {
+  const pizzaCategories = ['Все', 'Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые'];
+  const [activeCategory, setActiveCategory] = useState(0);
 
   return (
     <ul className={styles.list}>
-      {pizzaCategories.map(({ id, name }) => {
-        // console.log(id);
+      {pizzaCategories.map((categoryName, i) => {
         return (
-          <Category
-            key={id}
-            id={id}
-            name={name}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-          />
+          <li className={styles.item} key={i}>
+            <button
+              className={classnames([styles.button, [styles.active, activeCategory === i]])}
+              type="button"
+              onClick={() => {
+                setActiveCategory(i);
+                onClickCategory(i);
+              }}>
+              {categoryName}
+            </button>
+          </li>
         );
       })}
     </ul>

@@ -105,12 +105,12 @@
   justify-content: space-between;
 
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 10px 20px 8px;
   min-width: 100px;
   text-align: center;
   cursor: pointer;
 
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, translate 0.15s ease-in-out;
 
   &:hover {
     border-color: transparent;
@@ -123,6 +123,10 @@
     }
   }
 
+  &:active {
+    translate: 0 2px;
+  }
+
   & > svg {
     stroke: inherit;
     display: inline-block;
@@ -133,7 +137,6 @@
     color: inherit;
     font-weight: 700;
     font-size: 16px;
-    // padding: 0 20px;
   }
 
   & > i {
