@@ -13,24 +13,26 @@ const MainPage = () => {
   const [categoryId, setCategoryId] = useState(0);
   const [sortType, setSortType] = useState(0);
 
+  console.log(categoryId, sortType);
+
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://67491bca5801f51535930042.mockapi.io/items')
+    fetch('https://67491bca5801f51535930042.mockapi.io/items?category=' + (categoryId > 0 ? categoryId : ''))
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [categoryId]);
 
   return (
     <Template>
       <Container>
         <h1 className="visually-hidden">Лучшая пицца во вселенной</h1>
         <div className={styles.control}>
-          <Categories value={categoryId} onClickCategory={(i) => setCategoryId(i)} />
-          <Sort sortType={sortType} setSortType={setSortType} />
+          <Categories value={categoryId} onChangeCategory={(i) => setCategoryId(i)} />
+          <Sort value={sortType} onChangeSort={setSortType} />
         </div>
 
         <section className={styles.section}>
@@ -43,7 +45,7 @@ const MainPage = () => {
                     <Skeleton />
                   </li>
                 ))
-              : items.map((item) => <PizzaBlock key={item.id} {...item} />)}
+              : items?.map((item) => <PizzaBlock key={item.id} {...item} />)}
           </ul>
         </section>
       </Container>

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from './Categories.module.scss';
 import classnames from '../../utils/classnames';
 
-const Categories = ({ value, onClickCategory }) => {
+const Categories = ({ value, onChangeCategory }) => {
+  // console.log(value);
   const pizzaCategories = ['Все', 'Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые'];
   const [activeCategory, setActiveCategory] = useState(0);
 
@@ -16,7 +17,7 @@ const Categories = ({ value, onClickCategory }) => {
               type="button"
               onClick={() => {
                 setActiveCategory(i);
-                onClickCategory(i);
+                onChangeCategory(i);
               }}>
               {categoryName}
             </button>
