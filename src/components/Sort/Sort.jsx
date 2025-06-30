@@ -5,9 +5,15 @@ import 'react-dropdown/style.css';
 import classnames from '../../utils/classnames';
 
 const Sort = ({ value, onChangeSort }) => {
-  const list = ['популярности', 'цене', 'алфавиту'];
+  // console.log(onChangeSort);
+  const list = [
+    { name: 'популярности', sortProperety: 'rating' },
+    { name: 'цене', sortProperety: 'price' },
+    { name: 'алфавиту', sortProperety: 'title' },
+  ];
   const [open, setOpen] = useState(false);
-  const sortType = list[value];
+  // c
+  // const sortType = list[value].name;
 
   const onClickListItem = (i) => {
     onChangeSort(i);
@@ -19,22 +25,25 @@ const Sort = ({ value, onChangeSort }) => {
       <div className={classnames([styles.label, [styles.open, open]])} onClick={() => setOpen(!open)}>
         <SortArrow />
         <b>Сортировка по : </b>
-        <span>{value}</span>
+        <span>{value.name}</span>
       </div>
 
       {open && (
         <ul className={styles.list}>
-          {list.map((option, index) => (
-            <li
-              className={classnames([styles.item, [styles.active, value === option]])}
-              key={index}
-              onClick={() => {
-                onClickListItem(index);
-                setOpen(false);
-              }}>
-              {option}
-            </li>
-          ))}
+          {list.map((obj, index) => {
+            // console.log(obj);
+            return (
+              <li
+                className={classnames([styles.item, [styles.active, value === obj.sortProperety]])}
+                key={index}
+                onClick={() => {
+                  onClickListItem(obj);
+                  setOpen(false);
+                }}>
+                {obj.name}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

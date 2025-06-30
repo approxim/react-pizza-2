@@ -11,9 +11,12 @@ const MainPage = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [categoryId, setCategoryId] = useState(0);
-  const [sortType, setSortType] = useState(0);
+  const [sortType, setSortType] = useState({
+    name: 'популярности',
+    sortProperety: 'rating',
+  });
 
-  console.log(categoryId, sortType);
+  // console.log(categoryId, sortType);
 
   useEffect(() => {
     setIsLoading(true);
